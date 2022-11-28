@@ -28,11 +28,11 @@ runs:
           status="failure"
         elif [ "${cancelled}" -gt 0 ]; then
           status="cancelled"
-        else 
+        else
           status="success"
         fi
-        
-        echo "::set-output name=status::${status}"
+
+        echo "status=${status}" >> $GITHUB_OUTPUT
       shell: bash
 branding:
   icon: check-square
